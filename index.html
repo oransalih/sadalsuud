@@ -25,6 +25,27 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Privacy Policy Modal */
+        #privacy-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+        }
+        #privacy-modal.open { display: flex; align-items: flex-start; justify-content: center; padding: 40px 16px; }
+        #privacy-modal .modal-box {
+            background: #0d1117;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            max-width: 720px;
+            width: 100%;
+            padding: 48px;
+            position: relative;
+        }
     </style>
 </head>
 <body class="stars-bg">
@@ -80,7 +101,6 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-4">Öne Çıkan Çalışmalar</h2>
             <p class="text-gray-400 mb-12 text-sm uppercase">Son dönemde teslim ettiğimiz projeler</p>
-
         </div>
     </section>
 
@@ -101,8 +121,55 @@
         </div>
         <div class="mt-20 text-center text-gray-600 text-xs">
             © 2026 SadalsuudTech. "Luck of Lucks" - Kodun Yıldızı.
+            <span class="mx-2">·</span>
+            <button onclick="document.getElementById('privacy-modal').classList.add('open')" class="hover:text-gray-400 transition underline underline-offset-2">
+                Gizlilik Politikası
+            </button>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal">
+        <div class="modal-box">
+            <button onclick="document.getElementById('privacy-modal').classList.remove('open')"
+                class="absolute top-5 right-6 text-gray-500 hover:text-white text-2xl transition">
+                &times;
+            </button>
+            <h1 class="text-3xl font-bold mb-2">Gizlilik Politikası</h1>
+            <p class="text-gray-500 text-sm mb-10">Son güncelleme: 4 Mart 2026</p>
+
+            <p class="text-gray-300 mb-6">
+                Bu gizlilik politikası, <strong>Zihin Duellosu</strong> uygulamasının kullanıcı verilerini nasıl ele aldığını açıklamaktadır.
+            </p>
+
+            <h2 class="text-lg font-bold mt-8 mb-3 text-blue-400">1. Toplanan Veriler</h2>
+            <p class="text-gray-400 leading-relaxed">
+                <strong class="text-white">Zihin Duellosu</strong> uygulaması, kullanıcılardan herhangi bir kişisel veri toplamamakta, işlememekte veya üçüncü taraflarla paylaşmamaktadır. Uygulama tamamen çevrimdışı çalışmaktadır ve hiçbir kullanıcı bilgisi sunucularımıza iletilmemektedir.
+            </p>
+
+            <h2 class="text-lg font-bold mt-8 mb-3 text-blue-400">2. Üçüncü Taraf Hizmetler</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Uygulama, kullanıcı verisi toplayan herhangi bir üçüncü taraf analitik veya reklam hizmeti kullanmamaktadır.
+            </p>
+
+            <h2 class="text-lg font-bold mt-8 mb-3 text-blue-400">3. Çocukların Gizliliği</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Uygulamamız hiçbir yaş grubundan kullanıcıya ait veri toplamamaktadır. Bu nedenle çocuklara ilişkin özel bir veri işleme süreci mevcut değildir.
+            </p>
+
+            <h2 class="text-lg font-bold mt-8 mb-3 text-blue-400">4. Değişiklikler</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Bu politika zaman zaman güncellenebilir. Değişiklikler bu sayfada yayımlanacaktır.
+            </p>
+
+            <h2 class="text-lg font-bold mt-8 mb-3 text-blue-400">5. İletişim</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Gizlilik politikamıza ilişkin sorularınız için
+                <a href="https://sadalsuudtech.com/" class="text-blue-400 hover:underline">sadalsuudtech.com</a>
+                adresinden bize ulaşabilirsiniz.
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
